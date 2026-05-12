@@ -1,341 +1,1388 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resting in God - Season 4</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        :root {
-            --primary-color: #365233;
-            --secondary-color: #f4f7f4;
-            --accent-color: #e8ede7;
-        }
-        body {
-            background-color: var(--secondary-color);
-            color: #333;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .tab-active {
-            background-color: var(--primary-color) !important;
-            color: white !important;
-            border-bottom: 4px solid #2a4028;
-        }
-        .content-section {
-            display: none;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-        .content-section.active {
-            display: block;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-        }
-        .step-header {
-            color: var(--primary-color);
-            font-weight: bold;
-            border-bottom: 2px solid var(--accent-color);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-        }
-        .step-header span {
-            background: var(--primary-color);
-            color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            margin-right: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resting in God — Season 4: Healing The Soul</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #365233;
+    --forest-dark: #253b23;
+    --forest-light: #4a6e45;
+    --forest-pale: #e8f0e7;
+    --forest-mist: #f2f7f1;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-pale: #fdf6e3;
+    --blush: #d4826a;
+    --sky: #6a9fc0;
+    --lavender: #8a7aaa;
+    --sage: #8aab82;
+    --cream: #fdfaf4;
+    --text-dark: #2a2a2a;
+    --text-mid: #555;
+    --text-light: #888;
+    --white: #ffffff;
+    --shadow-sm: 0 2px 8px rgba(54,82,51,0.10);
+    --shadow-md: 0 6px 24px rgba(54,82,51,0.14);
+    --shadow-lg: 0 16px 48px rgba(54,82,51,0.18);
+    --radius: 16px;
+    --radius-sm: 8px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Lora', Georgia, serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, var(--forest-dark) 0%, var(--forest) 55%, var(--forest-light) 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 56px 24px 48px;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 20% 80%, rgba(201,168,76,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 20%, rgba(138,171,130,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-leaves {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .hero-leaves span {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0.12;
+    animation: leafDrift 18s infinite linear;
+  }
+  .hero-leaves span:nth-child(1) { left: 5%;  top: 10%; animation-delay: 0s;   font-size: 2rem; }
+  .hero-leaves span:nth-child(2) { left: 20%; top: 60%; animation-delay: 3s;   font-size: 1.2rem; }
+  .hero-leaves span:nth-child(3) { left: 40%; top: 20%; animation-delay: 6s;   }
+  .hero-leaves span:nth-child(4) { left: 70%; top: 70%; animation-delay: 1s;   font-size: 2.2rem; }
+  .hero-leaves span:nth-child(5) { left: 85%; top: 15%; animation-delay: 9s;   font-size: 1.8rem; }
+  .hero-leaves span:nth-child(6) { left: 55%; top: 80%; animation-delay: 12s;  font-size: 1rem; }
+  @keyframes leafDrift {
+    0%   { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 0.12; }
+    50%  { transform: translate(20px, -30px) rotate(180deg) scale(1.1); opacity: 0.18; }
+    100% { transform: translate(0, 0) rotate(360deg) scale(1); opacity: 0.12; }
+  }
+
+  .series-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,168,76,0.20);
+    border: 1px solid rgba(201,168,76,0.40);
+    color: var(--gold-light);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+  .series-badge::before { content: '✦'; font-size: 0.6rem; }
+  .series-badge::after  { content: '✦'; font-size: 0.6rem; }
+
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .hero h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1rem, 3vw, 1.35rem);
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(255,255,255,0.80);
+    margin-bottom: 6px;
+  }
+  .hero-sub {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.06em;
+    margin-top: 12px;
+  }
+  .hero-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 18px auto;
+  }
+  .hero-verse {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.70);
+    max-width: 340px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .hero-verse strong {
+    display: block;
+    font-style: normal;
+    font-size: 0.75rem;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0.10em;
+    color: var(--gold-light);
+    margin-top: 6px;
+    text-transform: uppercase;
+  }
+
+  /* ── SEASON PROGRESS ── */
+  .season-progress {
+    background: var(--forest-dark);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .season-label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-right: 4px;
+  }
+  .season-dot {
+    width: 26px;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.15);
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .season-dot.done   { background: var(--sage); }
+  .season-dot.active { background: var(--gold); box-shadow: 0 0 8px rgba(201,168,76,0.5); }
+
+  /* ── TABS NAV ── */
+  .tabs-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    border-bottom: 2px solid var(--forest-pale);
+    box-shadow: 0 2px 12px rgba(54,82,51,0.08);
+  }
+  .tabs-scroll {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .tabs-scroll::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex: none;
+    padding: 14px 22px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+    position: relative;
+    top: 2px;
+  }
+  .tab-btn:hover  { color: var(--forest); }
+  .tab-btn.active { color: var(--forest); border-bottom-color: var(--forest); }
+  .tab-btn .tab-icon { margin-right: 6px; font-size: 0.9rem; }
+
+  /* ── MAIN CONTENT ── */
+  .content-wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+  .tab-panel { display: none; animation: fadeUp 0.35s ease; }
+  .tab-panel.active { display: block; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── INTRO PANEL ── */
+  .intro-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .intro-banner {
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-light) 100%);
+    padding: 40px 36px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .intro-banner::after {
+    content: '🌿';
+    position: absolute;
+    right: 24px;
+    bottom: -10px;
+    font-size: 5rem;
+    opacity: 0.12;
+    transform: rotate(-20deg);
+  }
+  .intro-banner h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.6rem;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .intro-banner p {
+    color: rgba(255,255,255,0.78);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 500px;
+  }
+  .intro-body { padding: 36px; }
+  .intro-body p {
+    font-size: 0.97rem;
+    line-height: 1.85;
+    color: var(--text-mid);
+    margin-bottom: 18px;
+  }
+  .how-to-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .how-card {
+    background: var(--forest-mist);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    border-left: 4px solid var(--forest);
+  }
+  .how-card .how-label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .how-card p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--text-mid);
+    margin: 0;
+  }
+  .intro-reminders {
+    background: var(--gold-pale);
+    border: 1px solid rgba(201,168,76,0.30);
+    border-radius: var(--radius-sm);
+    padding: 20px 24px;
+    margin-top: 20px;
+  }
+  .intro-reminders h4 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 12px;
+  }
+  .reminder-list { list-style: none; }
+  .reminder-list li {
+    font-size: 0.90rem;
+    color: var(--text-mid);
+    padding: 5px 0;
+    padding-left: 22px;
+    position: relative;
+    line-height: 1.6;
+  }
+  .reminder-list li::before { content: '✦'; position: absolute; left: 0; color: var(--gold); font-size: 0.6rem; top: 8px; }
+
+  /* ── DAY PANELS ── */
+  .day-header {
+    margin-bottom: 28px;
+  }
+  .day-number-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .day-num {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--forest);
+    color: var(--white);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+  }
+  .day-season-tag {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--forest-light);
+    background: var(--forest-pale);
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  /* Section cards */
+  .section-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+  .section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+  }
+  .section-head:hover { background: var(--forest-mist); }
+  .section-head-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .before-icon  { background: linear-gradient(135deg, #e8f0e7, #c8ddc6); }
+  .during-icon  { background: linear-gradient(135deg, #fdf6e3, #f0e0a8); }
+  .after-icon   { background: linear-gradient(135deg, #e8f0f7, #b8d4e8); }
+
+  .section-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .before-title { color: var(--forest); }
+  .during-title { color: #8a6a1a; }
+  .after-title  { color: var(--sky); }
+  .section-subtitle {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 0.82rem;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+  .chevron {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    transition: transform 0.3s;
+  }
+  .section-card.open .chevron { transform: rotate(180deg); }
+
+  .section-body {
+    display: none;
+    padding: 0 24px 24px;
+    border-top: 1px solid var(--forest-pale);
+  }
+  .section-card.open .section-body { display: block; }
+
+  /* Scripture block */
+  .scripture-block {
+    background: linear-gradient(135deg, var(--forest-mist), var(--gold-pale));
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    margin: 18px 0;
+    border-left: 4px solid var(--forest);
+    position: relative;
+  }
+  .scripture-block::before {
+    content: '"';
+    position: absolute;
+    top: -8px;
+    left: 16px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 4rem;
+    color: var(--forest);
+    opacity: 0.15;
+    line-height: 1;
+  }
+  .scripture-ref {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 6px;
+  }
+  .scripture-text {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 0.93rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+  }
+
+  /* Steps list */
+  .steps-list { list-style: none; margin-top: 14px; }
+  .steps-list li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--forest-pale);
+    font-size: 0.92rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+    align-items: flex-start;
+  }
+  .steps-list li:last-child { border-bottom: none; }
+  .step-bullet {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--forest-pale);
+    color: var(--forest);
+    font-size: 0.62rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    font-weight: 700;
+  }
+
+  /* Reflect questions */
+  .reflect-q {
+    background: var(--forest-mist);
+    border-radius: var(--radius-sm);
+    padding: 16px 18px;
+    margin: 8px 0;
+    font-size: 0.92rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+    border-left: 3px solid var(--forest-light);
+  }
+
+  /* Prayer block */
+  .prayer-block {
+    background: linear-gradient(135deg, rgba(54,82,51,0.07), rgba(54,82,51,0.04));
+    border: 1.5px dashed rgba(54,82,51,0.25);
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    margin: 16px 0;
+    text-align: center;
+  }
+  .prayer-label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.63rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--forest-light);
+    margin-bottom: 8px;
+  }
+  .prayer-text {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--forest-dark);
+    line-height: 1.7;
+  }
+
+  /* ── JOURNAL / EMAIL ── */
+  .journal-section {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  .journal-head {
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-light) 100%);
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .journal-head-icon {
+    font-size: 1.4rem;
+  }
+  .journal-head-text h4 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  .journal-head-text p {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.70);
+    margin-top: 2px;
+  }
+  .journal-body { padding: 24px; }
+  .journal-label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 6px;
+    display: block;
+  }
+  .journal-textarea {
+    width: 100%;
+    min-height: 130px;
+    border: 1.5px solid var(--forest-pale);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.92rem;
+    color: var(--text-dark);
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s;
+    background: var(--cream);
+    line-height: 1.7;
+  }
+  .journal-textarea:focus { border-color: var(--forest); }
+  .email-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  @media (max-width: 520px) { .email-row { grid-template-columns: 1fr; } }
+  .email-input {
+    width: 100%;
+    border: 1.5px solid var(--forest-pale);
+    border-radius: var(--radius-sm);
+    padding: 11px 14px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.88rem;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.2s;
+    background: var(--cream);
+  }
+  .email-input:focus { border-color: var(--forest); }
+  .send-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--forest);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 12px 24px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .send-btn:hover  { background: var(--forest-dark); }
+  .send-btn:active { transform: scale(0.97); }
+  .send-note {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.72rem;
+    color: var(--text-light);
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+  .toast {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    background: var(--forest);
+    color: var(--white);
+    border-radius: var(--radius-sm);
+    padding: 12px 18px;
+    margin-top: 14px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.85rem;
+    animation: fadeUp 0.3s ease;
+  }
+  .toast.show { display: flex; }
+
+  /* ── FOOTER ── */
+  .page-footer {
+    background: var(--forest-dark);
+    padding: 28px 24px;
+    text-align: center;
+  }
+  .page-footer p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.8;
+  }
+  .page-footer a { color: var(--gold-light); text-decoration: none; }
+  .footer-logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .intro-body { padding: 24px 18px; }
+    .intro-banner { padding: 28px 22px 24px; }
+    .section-head { padding: 15px 18px; }
+    .section-body { padding: 0 18px 20px; }
+    .journal-body { padding: 18px; }
+    .content-wrap { padding: 24px 14px 60px; }
+    .tab-btn { padding: 12px 14px; font-size: 0.75rem; }
+  }
+</style>
 </head>
-<body class="p-4 md:p-8">
+<body>
 
-    <div class="max-w-4xl mx-auto">
-        <!-- Header -->
-        <header class="text-center mb-10">
-            <h1 class="text-4xl font-bold mb-2" style="color: var(--primary-color);">Resting in God</h1>
-            <p class="text-xl text-gray-600 italic">Season 4: Healing the Soul</p>
-            <div class="mt-4 w-24 h-1 mx-auto" style="background-color: var(--primary-color);"></div>
-        </header>
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-leaves">
+    <span>🍃</span><span>🌿</span><span>🍃</span>
+    <span>🌿</span><span>🍃</span><span>🌿</span>
+  </div>
+  <div class="series-badge">Season 4 of 10</div>
+  <h1>Resting in God</h1>
+  <h2>Healing The Soul</h2>
+  <div class="hero-divider"></div>
+  <p class="hero-verse">
+    "He restores my soul."
+    <strong>— Psalm 23:3</strong>
+  </p>
+  <p class="hero-sub" style="margin-top:18px;">Days 16–20 · Sabbath Reflections</p>
+</header>
 
-        <!-- Tab Navigation -->
-        <nav class="flex flex-wrap justify-center gap-2 mb-8" id="tab-nav">
-            <button onclick="showTab('intro')" class="tab-btn px-6 py-2 rounded-t-lg bg-white font-semibold transition-all hover:bg-gray-100" id="btn-intro">Introduction</button>
-            <button onclick="showTab('day16')" class="tab-btn px-6 py-2 rounded-t-lg bg-white font-semibold transition-all hover:bg-gray-100" id="btn-day16">Day 16</button>
-            <button onclick="showTab('day17')" class="tab-btn px-6 py-2 rounded-t-lg bg-white font-semibold transition-all hover:bg-gray-100" id="btn-day17">Day 17</button>
-            <button onclick="showTab('day18')" class="tab-btn px-6 py-2 rounded-t-lg bg-white font-semibold transition-all hover:bg-gray-100" id="btn-day18">Day 18</button>
-            <button onclick="showTab('day19')" class="tab-btn px-6 py-2 rounded-t-lg bg-white font-semibold transition-all hover:bg-gray-100" id="btn-day19">Day 19</button>
-            <button onclick="showTab('day20')" class="tab-btn px-6 py-2 rounded-t-lg bg-white font-semibold transition-all hover:bg-gray-100" id="btn-day20">Day 20</button>
-        </nav>
+<!-- SEASON PROGRESS -->
+<div class="season-progress">
+  <span class="season-label">Journey</span>
+  <div class="season-dot done" title="Season 1"></div>
+  <div class="season-dot done" title="Season 2"></div>
+  <div class="season-dot done" title="Season 3"></div>
+  <div class="season-dot active" title="Season 4 — Current"></div>
+  <div class="season-dot" title="Season 5"></div>
+  <div class="season-dot" title="Season 6"></div>
+  <div class="season-dot" title="Season 7"></div>
+  <div class="season-dot" title="Season 8"></div>
+  <div class="season-dot" title="Season 9"></div>
+  <div class="season-dot" title="Season 10"></div>
+</div>
 
-        <!-- Content Area -->
-        <div id="content-container">
-            
-            <!-- Intro Tab -->
-            <section id="intro" class="content-section active card p-6 md:p-10">
-                <h2 class="text-2xl font-bold mb-4" style="color: var(--primary-color);">How to Use These Guidelines</h2>
-                <div class="space-y-4 text-gray-700 leading-relaxed">
-                    <p>There are times when rest is not only physical but deeply emotional and spiritual. We may continue functioning outwardly while inwardly carrying exhaustion, disappointment, anxiety, grief, or hidden weariness.</p>
-                    <p class="font-medium">This season is an invitation to bring your tired soul honestly before God.</p>
-                    <p>You do not need to hide your weakness, force yourself to feel strong, or pretend everything is fine. God welcomes weary people with compassion and gentleness.</p>
-                    
-                    <div class="bg-stone-50 p-4 rounded-lg border-l-4" style="border-color: var(--primary-color);">
-                        <p class="italic">"He restores my soul." — Psalm 23:3</p>
-                    </div>
+<!-- TABS NAV -->
+<nav class="tabs-wrapper">
+  <div class="tabs-scroll">
+    <button class="tab-btn active" onclick="switchTab('intro', this)">
+      <span class="tab-icon">🌿</span>Guide
+    </button>
+    <button class="tab-btn" onclick="switchTab('day16', this)">
+      <span class="tab-icon">🌱</span>Day 16
+    </button>
+    <button class="tab-btn" onclick="switchTab('day17', this)">
+      <span class="tab-icon">☀️</span>Day 17
+    </button>
+    <button class="tab-btn" onclick="switchTab('day18', this)">
+      <span class="tab-icon">🕊️</span>Day 18
+    </button>
+    <button class="tab-btn" onclick="switchTab('day19', this)">
+      <span class="tab-icon">🌊</span>Day 19
+    </button>
+    <button class="tab-btn" onclick="switchTab('day20', this)">
+      <span class="tab-icon">🤲</span>Day 20
+    </button>
+  </div>
+</nav>
 
-                    <h3 class="font-bold text-lg mt-6">As you move through these Sabbath Days:</h3>
-                    <ul class="list-disc ml-6 space-y-2">
-                        <li>Slow down emotionally.</li>
-                        <li>Become honest before God.</li>
-                        <li>Receive grace instead of pressure.</li>
-                        <li>Allow your soul room to breathe.</li>
-                    </ul>
-                    <p class="mt-4 text-sm bg-blue-50 p-3 rounded text-blue-800">Note: Healing often happens quietly and gradually. Do not rush the process.</p>
-                </div>
-            </section>
+<!-- CONTENT -->
+<main class="content-wrap">
 
-            <!-- Day 16 -->
-            <section id="day16" class="content-section card p-6 md:p-10">
-                <div class="mb-8">
-                    <h3 class="step-header"><span>1</span>BEFORE</h3>
-                    <ul class="list-disc ml-6 space-y-2">
-                        <li>Begin your Sabbath by acknowledging your tiredness honestly.</li>
-                        <li>Avoid minimizing or ignoring what you feel.</li>
-                        <li><strong>Pray:</strong> "Lord, help me bring my whole self to You today."</li>
-                        <li>Take several slow breaths and release tension in your body.</li>
-                    </ul>
-                </div>
-                <div class="mb-8">
-                    <h3 class="step-header"><span>2</span>DURING</h3>
-                    <ul class="list-disc ml-6 space-y-2">
-                        <li>Read Matthew 11:28-30 slowly.</li>
-                        <li>Write down the things that are draining your soul.</li>
-                        <li>Spend quiet time with God without trying to fix everything immediately.</li>
-                        <li>Rest physically if your body feels exhausted.</li>
-                        <li>Speak gently to yourself throughout the day.</li>
-                    </ul>
-                </div>
-                <div class="mb-8">
-                    <h3 class="step-header"><span>3</span>AFTER</h3>
-                    <p class="font-semibold mb-2">Reflect:</p>
-                    <ul class="list-disc ml-6 space-y-2 mb-4">
-                        <li>What kind of weariness am I carrying?</li>
-                        <li>What helped me feel lighter today?</li>
-                    </ul>
-                    <p>Thank God for welcoming you in your weakness. End your Sabbath with quiet gratitude.</p>
-                </div>
-                <div class="reflection-area mt-10 p-6 bg-gray-50 rounded-xl border border-gray-200">
-                    <h4 class="font-bold mb-2">My Reflections</h4>
-                    <textarea id="ref-day16" class="w-full h-32 p-3 border rounded-lg mb-4" placeholder="How did today feel?"></textarea>
-                    <button onclick="emailReflections(16)" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-900 transition-colors">Email Reflections</button>
-                </div>
-            </section>
+  <!-- ── INTRO ── -->
+  <section id="tab-intro" class="tab-panel active">
+    <div class="intro-card">
+      <div class="intro-banner">
+        <h3>Allowing God to Restore<br>Emotional &amp; Spiritual Weariness</h3>
+        <p>This season is an invitation to bring your tired soul honestly before God.</p>
+      </div>
+      <div class="intro-body">
+        <p>There are times when rest is not only physical but deeply emotional and spiritual. We may continue functioning outwardly while inwardly carrying exhaustion, disappointment, anxiety, grief, or hidden weariness.</p>
+        <p>You do not need to hide your weakness, force yourself to feel strong, or pretend everything is fine. <strong>God welcomes weary people with compassion and gentleness.</strong></p>
 
-            <!-- Day 17 -->
-            <section id="day17" class="content-section card p-6 md:p-10">
-                <div class="mb-8">
-                    <h3 class="step-header"><span>1</span>BEFORE</h3>
-                    <ul class="list-disc ml-6 space-y-2">
-                        <li>Notice any self-criticism or inner pressure you are carrying.</li>
-                        <li><strong>Pray:</strong> "Lord, help me receive Your compassion."</li>
-                        <li>Release unrealistic expectations for the day.</li>
-                    </ul>
-                </div>
-                <div class="mb-8">
-                    <h3 class="step-header"><span>2</span>DURING</h3>
-                    <ul class="list-disc ml-6 space-y-2">
-                        <li>Read Psalm 103 slowly.</li>
-                        <li>Imagine God looking at you with kindness and understanding.</li>
-                        <li>Spend time doing something nurturing and peaceful.</li>
-                        <li>Avoid harsh self-evaluation.</li>
-                        <li>Whenever feelings of failure arise, remind yourself: "God is compassionate and gracious."</li>
-                    </ul>
-                </div>
-                <div class="mb-8">
-                    <h3 class="step-header"><span>3</span>AFTER</h3>
-                    <p class="font-semibold mb-2">Reflect:</p>
-                    <ul class="list-disc ml-6 space-y-2 mb-4">
-                        <li>Was it difficult for me to receive compassion today?</li>
-                        <li>What helped me experience God's kindness?</li>
-                    </ul>
-                    <p>Offer yourself grace for areas where you feel weak. Rest in God's mercy.</p>
-                </div>
-                <div class="reflection-area mt-10 p-6 bg-gray-50 rounded-xl border border-gray-200">
-                    <h4 class="font-bold mb-2">My Reflections</h4>
-                    <textarea id="ref-day17" class="w-full h-32 p-3 border rounded-lg mb-4" placeholder="Reflect on God's compassion..."></textarea>
-                    <button onclick="emailReflections(17)" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-900 transition-colors">Email Reflections</button>
-                </div>
-            </section>
-
-            <!-- Day 18 -->
-            <section id="day18" class="content-section card p-6 md:p-10">
-                <div class="mb-8">
-                    <h3 class="step-header"><span>1</span>BEFORE</h3>
-                    <ul class="list-disc ml-6 space-y-2">
-                        <li>Bring any sadness, disappointment, or grief honestly before God.</li>
-                        <li>Do not pressure yourself to feel cheerful today.</li>
-                        <li><strong>Pray:</strong> "Lord, stay near to me in my sorrow."</li>
-                    </ul>
-                </div>
-                <div class="mb-8">
-                    <h3 class="step-header"><span>2</span>DURING</h3>
-                    <ul class="list-disc ml-6 space-y-2">
-                        <li>Read Psalm 34:18 slowly.</li>
-                        <li>Allow yourself to feel emotions without rushing past them.</li>
-                        <li>Sit quietly with God even if words are difficult.</li>
-                        <li>Spend time in a peaceful place.</li>
-                        <li>Listen to gentle worship music or reflective hymns.</li>
-                        <li>Remember that God is present even in sorrow.</li>
-                    </ul>
-                </div>
-                <div class="mb-8">
-                    <h3 class="step-header"><span>3</span>AFTER</h3>
-                    <p class="font-semibold mb-2">Reflect:</p>
-                    <ul class="list-disc ml-6 space-y-2 mb-4">
-                        <li>What grief or sadness surfaced today?</li>
-                        <li>Did I sense God's presence in my weakness?</li>
-                    </ul>
-                    <p>Thank God for staying near to the brokenhearted. End your Sabbath gently and quietly.</p>
-                </div>
-                <div class="reflection-area mt-10 p-6 bg-gray-50 rounded-xl border border-gray-200">
-                    <h4 class="font-bold mb-2">My Reflections</h4>
-                    <textarea id="ref-day18" class="w-full h-32 p-3 border rounded-lg mb-4" placeholder="Honest thoughts with God..."></textarea>
-                    <button onclick="emailReflections(18)" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-900 transition-colors">Email Reflections</button>
-                </div>
-            </section>
-
-            <!-- Day 19 -->
-            <section id="day19" class="content-section card p-6 md:p-10">
-                <div class="mb-8">
-                    <h3 class="step-header"><span>1</span>BEFORE</h3>
-                    <ul class="list-disc ml-6 space-y-2">
-                        <li>Write down the worries occupying your thoughts.</li>
-                        <li>Pray through them slowly one by one.</li>
-                        <li><strong>Tell God:</strong> "I place these concerns into Your hands."</li>
-                    </ul>
-                </div>
-                <div class="mb-8">
-                    <h3 class="step-header"><span>2</span>DURING</h3>
-                    <ul class="list-disc ml-6 space-y-2">
-                        <li>Read Philippians 4:6-7 slowly.</li>
-                        <li>Practice slow breathing throughout the day.</li>
-                        <li>Avoid unnecessary stimulation or stressful media.</li>
-                        <li>Whenever anxious thoughts arise, pause and pray briefly.</li>
-                        <li>Spend time outdoors if possible.</li>
-                    </ul>
-                </div>
-                <div class="mb-8">
-                    <h3 class="step-header"><span>3</span>AFTER</h3>
-                    <p class="font-semibold mb-2">Reflect:</p>
-                    <ul class="list-disc ml-6 space-y-2 mb-4">
-                        <li>What anxieties were hardest to release?</li>
-                        <li>What moments helped me feel peace?</li>
-                    </ul>
-                    <p>Ask God for continued trust throughout the week. End your Sabbath with a simple prayer of surrender.</p>
-                </div>
-                <div class="reflection-area mt-10 p-6 bg-gray-50 rounded-xl border border-gray-200">
-                    <h4 class="font-bold mb-2">My Reflections</h4>
-                    <textarea id="ref-day19" class="w-full h-32 p-3 border rounded-lg mb-4" placeholder="What are you surrendering today?"></textarea>
-                    <button onclick="emailReflections(19)" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-900 transition-colors">Email Reflections</button>
-                </div>
-            </section>
-
-            <!-- Day 20 -->
-            <section id="day20" class="content-section card p-6 md:p-10">
-                <div class="mb-8">
-                    <h3 class="step-header"><span>1</span>BEFORE</h3>
-                    <ul class="list-disc ml-6 space-y-2">
-                        <li>Acknowledge areas where you feel emotionally or spiritually depleted.</li>
-                        <li><strong>Pray:</strong> "Lord, I cannot carry everything on my own."</li>
-                        <li>Release the pressure to appear strong.</li>
-                    </ul>
-                </div>
-                <div class="mb-8">
-                    <h3 class="step-header"><span>2</span>DURING</h3>
-                    <ul class="list-disc ml-6 space-y-2">
-                        <li>Read Isaiah 46:3-4 slowly.</li>
-                        <li>Spend time resting rather than striving.</li>
-                        <li>Receive help, support, or kindness from others if available.</li>
-                        <li>Choose gentleness toward yourself throughout the day.</li>
-                        <li>Allow yourself to simply be held by God's presence.</li>
-                    </ul>
-                </div>
-                <div class="mb-8">
-                    <h3 class="step-header"><span>3</span>AFTER</h3>
-                    <p class="font-semibold mb-2">Reflect:</p>
-                    <ul class="list-disc ml-6 space-y-2 mb-4">
-                        <li>What burdens am I trying to carry alone?</li>
-                        <li>What would it mean to trust God more deeply?</li>
-                    </ul>
-                    <p>Thank God for His sustaining grace. Close your Sabbath with peace and quiet trust.</p>
-                </div>
-                <div class="reflection-area mt-10 p-6 bg-gray-50 rounded-xl border border-gray-200">
-                    <h4 class="font-bold mb-2">My Reflections</h4>
-                    <textarea id="ref-day20" class="w-full h-32 p-3 border rounded-lg mb-4" placeholder="Reflecting on God's strength..."></textarea>
-                    <button onclick="emailReflections(20)" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-900 transition-colors">Email Reflections</button>
-                </div>
-            </section>
-
+        <div class="how-to-grid">
+          <div class="how-card">
+            <div class="how-label">🌅 Before</div>
+            <p>Prepare your heart honestly and gently before God.</p>
+          </div>
+          <div class="how-card">
+            <div class="how-label">☀️ During</div>
+            <p>Practice rhythms of rest, honesty, compassion, and emotional renewal.</p>
+          </div>
+          <div class="how-card">
+            <div class="how-label">🌙 After</div>
+            <p>Reflect on what God may be restoring within you.</p>
+          </div>
         </div>
 
-        <footer class="mt-12 text-center text-gray-500 text-sm pb-10">
-            &copy; 2024 Resting in God Series | Season 4: Healing the Soul
-        </footer>
+        <p>As you move through these Sabbath Days, allow yourself to slow down emotionally, become honest before God, receive grace instead of pressure, and allow your soul room to breathe.</p>
+
+        <div class="intro-reminders">
+          <h4>✦ Gentle Reminders</h4>
+          <ul class="reminder-list">
+            <li>Healing often happens quietly and gradually — do not rush the process.</li>
+            <li>Each day contains three sections: <em>Before, During,</em> and <em>After.</em></li>
+            <li>Tap or click each section to open and engage with it.</li>
+            <li>Use the journal at the end of each day to record your personal reflections.</li>
+            <li>You may email your reflections to yourself or share them with someone you trust.</li>
+            <li>This is <strong>Season 4</strong> of a 10-season journey. You are not alone on this road.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DAY 16 ── -->
+  <section id="tab-day16" class="tab-panel">
+    <div class="day-header">
+      <div class="day-number-badge">
+        <div class="day-num">16</div>
+        <span class="day-season-tag">Season 4 · Healing The Soul</span>
+      </div>
     </div>
 
-    <script>
-        function showTab(tabId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.content-section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
+    <!-- BEFORE -->
+    <div class="section-card open">
+      <div class="section-head" onclick="toggleSection(this)">
+        <div class="section-head-left">
+          <div class="section-icon before-icon">🌅</div>
+          <div>
+            <div class="section-title before-title">Before</div>
+            <div class="section-subtitle">Prepare your heart</div>
+          </div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <ul class="steps-list">
+          <li><span class="step-bullet">✦</span>Begin your Sabbath by acknowledging your tiredness honestly.</li>
+          <li><span class="step-bullet">✦</span>Avoid minimizing or ignoring what you feel.</li>
+          <li><span class="step-bullet">✦</span>Take several slow breaths and release tension in your body.</li>
+        </ul>
+        <div class="prayer-block">
+          <div class="prayer-label">🙏 Open with this prayer</div>
+          <div class="prayer-text">"Lord, help me bring my whole self to You today."</div>
+        </div>
+      </div>
+    </div>
 
-            // Deactivate all buttons
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('tab-active');
-            });
+    <!-- DURING -->
+    <div class="section-card">
+      <div class="section-head" onclick="toggleSection(this)">
+        <div class="section-head-left">
+          <div class="section-icon during-icon">☀️</div>
+          <div>
+            <div class="section-title during-title">During</div>
+            <div class="section-subtitle">Practice rhythms of rest</div>
+          </div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="scripture-block">
+          <div class="scripture-ref">Matthew 11:28–30</div>
+          <div class="scripture-text">Read this passage slowly and allow it to settle in your heart.</div>
+        </div>
+        <ul class="steps-list">
+          <li><span class="step-bullet">✦</span>Write down the things that are draining your soul.</li>
+          <li><span class="step-bullet">✦</span>Spend quiet time with God without trying to fix everything immediately.</li>
+          <li><span class="step-bullet">✦</span>Rest physically if your body feels exhausted.</li>
+          <li><span class="step-bullet">✦</span>Speak gently to yourself throughout the day.</li>
+        </ul>
+      </div>
+    </div>
 
-            // Show current section and activate button
-            document.getElementById(tabId).classList.add('active');
-            document.getElementById('btn-' + tabId).classList.add('tab-active');
+    <!-- AFTER -->
+    <div class="section-card">
+      <div class="section-head" onclick="toggleSection(this)">
+        <div class="section-head-left">
+          <div class="section-icon after-icon">🌙</div>
+          <div>
+            <div class="section-title after-title">After</div>
+            <div class="section-subtitle">Receive and reflect</div>
+          </div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="reflect-q">What kind of weariness am I carrying?</div>
+        <div class="reflect-q">What helped me feel lighter today?</div>
+        <ul class="steps-list" style="margin-top:14px">
+          <li><span class="step-bullet">✦</span>Thank God for welcoming you in your weakness.</li>
+          <li><span class="step-bullet">✦</span>End your Sabbath with quiet gratitude.</li>
+        </ul>
+      </div>
+    </div>
 
-            // Scroll to top of content
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+    <!-- JOURNAL -->
+    <div class="journal-section">
+      <div class="journal-head">
+        <span class="journal-head-icon">📖</span>
+        <div class="journal-head-text">
+          <h4>My Reflections — Day 16</h4>
+          <p>Write your thoughts, prayers, and responses</p>
+        </div>
+      </div>
+      <div class="journal-body">
+        <label class="journal-label">Your reflections</label>
+        <textarea class="journal-textarea" id="journal-16" placeholder="What is God speaking to me today? What weariness am I naming before Him?"></textarea>
+        <div class="email-row">
+          <div>
+            <label class="journal-label">Send to (your email)</label>
+            <input type="email" class="email-input" id="email-self-16" placeholder="your@email.com">
+          </div>
+          <div>
+            <label class="journal-label">Also share with (optional)</label>
+            <input type="email" class="email-input" id="email-other-16" placeholder="friend@email.com">
+          </div>
+        </div>
+        <button class="send-btn" onclick="sendReflection(16)">✉ Send Reflections</button>
+        <p class="send-note">Your reflection will open your email app pre-filled and ready to send.</p>
+        <div class="toast" id="toast-16">✅ Email opened! Check your mail app.</div>
+      </div>
+    </div>
+  </section>
 
-        function emailReflections(dayNum) {
-            const reflection = document.getElementById('ref-day' + dayNum).value;
-            if (!reflection.trim()) {
-                alert("Please write some reflections before sending.");
-                return;
-            }
+  <!-- ── DAY 17 ── -->
+  <section id="tab-day17" class="tab-panel">
+    <div class="day-header">
+      <div class="day-number-badge">
+        <div class="day-num" style="background:var(--blush)">17</div>
+        <span class="day-season-tag">Season 4 · Healing The Soul</span>
+      </div>
+    </div>
 
-            const subject = encodeURIComponent("Resting in God - Day " + dayNum + " Reflections");
-            const body = encodeURIComponent("Here are my reflections for Day " + dayNum + " (Season 4: Healing the Soul):\n\n" + reflection);
-            
-            // This is the standard way to trigger email in a browser
-            window.location.href = `mailto:?subject=${subject}&body=${body}`;
-        }
+    <div class="section-card open">
+      <div class="section-head" onclick="toggleSection(this)">
+        <div class="section-head-left">
+          <div class="section-icon before-icon">🌅</div>
+          <div>
+            <div class="section-title before-title">Before</div>
+            <div class="section-subtitle">Prepare your heart</div>
+          </div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <ul class="steps-list">
+          <li><span class="step-bullet">✦</span>Notice any self-criticism or inner pressure you are carrying.</li>
+          <li><span class="step-bullet">✦</span>Release unrealistic expectations for the day.</li>
+        </ul>
+        <div class="prayer-block">
+          <div class="prayer-label">🙏 Open with this prayer</div>
+          <div class="prayer-text">"Lord, help me receive Your compassion."</div>
+        </div>
+      </div>
+    </div>
 
-        // Initialize first tab
-        window.onload = function() {
-            showTab('intro');
-        };
-    </script>
+    <div class="section-card">
+      <div class="section-head" onclick="toggleSection(this)">
+        <div class="section-head-left">
+          <div class="section-icon during-icon">☀️</div>
+          <div>
+            <div class="section-title during-title">During</div>
+            <div class="section-subtitle">Practice rhythms of rest</div>
+          </div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="scripture-block">
+          <div class="scripture-ref">Psalm 103</div>
+          <div class="scripture-text">Read this psalm slowly. Let the words of God's mercy wash over you.</div>
+        </div>
+        <ul class="steps-list">
+          <li><span class="step-bullet">✦</span>Imagine God looking at you with kindness and understanding.</li>
+          <li><span class="step-bullet">✦</span>Spend time doing something nurturing and peaceful.</li>
+          <li><span class="step-bullet">✦</span>Avoid harsh self-evaluation.</li>
+          <li><span class="step-bullet">✦</span>Whenever feelings of failure arise, remind yourself: <em>"God is compassionate and gracious."</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-head" onclick="toggleSection(this)">
+        <div class="section-head-left">
+          <div class="section-icon after-icon">🌙</div>
+          <div>
+            <div class="section-title after-title">After</div>
+            <div class="section-subtitle">Receive and reflect</div>
+          </div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="reflect-q">Was it difficult for me to receive compassion today?</div>
+        <div class="reflect-q">What helped me experience God's kindness?</div>
+        <ul class="steps-list" style="margin-top:14px">
+          <li><span class="step-bullet">✦</span>Offer yourself grace for areas where you feel weak.</li>
+          <li><span class="step-bullet">✦</span>Rest in God's mercy.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="journal-section">
+      <div class="journal-head" style="background: linear-gradient(135deg, var(--blush) 0%, #c47060 100%)">
+        <span class="journal-head-icon">📖</span>
+        <div class="journal-head-text">
+          <h4>My Reflections — Day 17</h4>
+          <p>Write your thoughts, prayers, and responses</p>
+        </div>
+      </div>
+      <div class="journal-body">
+        <label class="journal-label">Your reflections</label>
+        <textarea class="journal-textarea" id="journal-17" placeholder="How did I experience God's compassion today? Where did I resist it?"></textarea>
+        <div class="email-row">
+          <div>
+            <label class="journal-label">Send to (your email)</label>
+            <input type="email" class="email-input" id="email-self-17" placeholder="your@email.com">
+          </div>
+          <div>
+            <label class="journal-label">Also share with (optional)</label>
+            <input type="email" class="email-input" id="email-other-17" placeholder="friend@email.com">
+          </div>
+        </div>
+        <button class="send-btn" style="background:var(--blush)" onclick="sendReflection(17)">✉ Send Reflections</button>
+        <p class="send-note">Your reflection will open your email app pre-filled and ready to send.</p>
+        <div class="toast" id="toast-17">✅ Email opened! Check your mail app.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DAY 18 ── -->
+  <section id="tab-day18" class="tab-panel">
+    <div class="day-header">
+      <div class="day-number-badge">
+        <div class="day-num" style="background:var(--sky)">18</div>
+        <span class="day-season-tag">Season 4 · Healing The Soul</span>
+      </div>
+    </div>
+
+    <div class="section-card open">
+      <div class="section-head" onclick="toggleSection(this)">
+        <div class="section-head-left">
+          <div class="section-icon before-icon">🌅</div>
+          <div>
+            <div class="section-title before-title">Before</div>
+            <div class="section-subtitle">Prepare your heart</div>
+          </div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <ul class="steps-list">
+          <li><span class="step-bullet">✦</span>Bring any sadness, disappointment, or grief honestly before God.</li>
+          <li><span class="step-bullet">✦</span>Do not pressure yourself to feel cheerful today.</li>
+        </ul>
+        <div class="prayer-block">
+          <div class="prayer-label">🙏 Open with this prayer</div>
+          <div class="prayer-text">"Lord, stay near to me in my sorrow."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-head" onclick="toggleSection(this)">
+        <div class="section-head-left">
+          <div class="section-icon during-icon">☀️</div>
+          <div>
+            <div class="section-title during-title">During</div>
+            <div class="section-subtitle">Practice rhythms of rest</div>
+          </div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="scripture-block">
+          <div class="scripture-ref">Psalm 34:18</div>
+          <div class="scripture-text">Read this verse slowly. Let it remind you that God is near to the brokenhearted.</div>
+        </div>
+        <ul class="steps-list">
+          <li><span class="step-bullet">✦</span>Allow yourself to feel emotions without rushing past them.</li>
+          <li><span class="step-bullet">✦</span>Sit quietly with God even if words are difficult.</li>
+          <li><span class="step-bullet">✦</span>Spend time in a peaceful place.</li>
+          <li><span class="step-bullet">✦</span>Listen to gentle worship music or reflective hymns.</li>
+          <li><span class="step-bullet">✦</span>Remember that God is present even in sorrow.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-head" onclick="toggleSection(this)">
+        <div class="section-head-left">
+          <div class="section-icon after-icon">🌙</div>
+          <div>
+            <div class="section-title after-title">After</div>
+            <div class="section-subtitle">Receive and reflect</div>
+          </div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="reflect-q">What grief or sadness surfaced today?</div>
+        <div class="reflect-q">Did I sense God's presence in my weakness?</div>
+        <ul class="steps-list" style="margin-top:14px">
+          <li><span class="step-bullet">✦</span>Thank God for staying near to the brokenhearted.</li>
+          <li><span class="step-bullet">✦</span>End your Sabbath gently and quietly.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="journal-section">
+      <div class="journal-head" style="background: linear-gradient(135deg, var(--sky) 0%, #4a85a8 100%)">
+        <span class="journal-head-icon">📖</span>
+        <div class="journal-head-text">
+          <h4>My Reflections — Day 18</h4>
+          <p>Write your thoughts, prayers, and responses</p>
+        </div>
+      </div>
+      <div class="journal-body">
+        <label class="journal-label">Your reflections</label>
+        <textarea class="journal-textarea" id="journal-18" placeholder="What grief came to the surface? Where did I sense God drawing near?"></textarea>
+        <div class="email-row">
+          <div>
+            <label class="journal-label">Send to (your email)</label>
+            <input type="email" class="email-input" id="email-self-18" placeholder="your@email.com">
+          </div>
+          <div>
+            <label class="journal-label">Also share with (optional)</label>
+            <input type="email" class="email-input" id="email-other-18" placeholder="friend@email.com">
+          </div>
+        </div>
+        <button class="send-btn" style="background:var(--sky)" onclick="sendReflection(18)">✉ Send Reflections</button>
+        <p class="send-note">Your reflection will open your email app pre-filled and ready to send.</p>
+        <div class="toast" id="toast-18">✅ Email opened! Check your mail app.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DAY 19 ── -->
+  <section id="tab-day19" class="tab-panel">
+    <div class="day-header">
+      <div class="day-number-badge">
+        <div class="day-num" style="background:var(--lavender)">19</div>
+        <span class="day-season-tag">Season 4 · Healing The Soul</span>
+      </div>
+    </div>
+
+    <div class="section-card open">
+      <div class="section-head" onclick="toggleSection(this)">
+        <div class="section-head-left">
+          <div class="section-icon before-icon">🌅</div>
+          <div>
+            <div class="section-title before-title">Before</div>
+            <div class="section-subtitle">Prepare your heart</div>
+          </div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <ul class="steps-list">
+          <li><span class="step-bullet">✦</span>Write down the worries occupying your thoughts.</li>
+          <li><span class="step-bullet">✦</span>Pray through them slowly one by one.</li>
+        </ul>
+        <div class="prayer-block">
+          <div class="prayer-label">🙏 Open with this prayer</div>
+          <div class="prayer-text">"I place these concerns into Your hands."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-head" onclick="toggleSection(this)">
+        <div class="section-head-left">
+          <div class="section-icon during-icon">☀️</div>
+          <div>
+            <div class="section-title during-title">During</div>
+            <div class="section-subtitle">Practice rhythms of rest</div>
+          </div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="scripture-block">
+          <div class="scripture-ref">Philippians 4:6–7</div>
+          <div class="scripture-text">Read this passage slowly. Let it give shape to your surrender.</div>
+        </div>
+        <ul class="steps-list">
+          <li><span class="step-bullet">✦</span>Practice slow breathing throughout the day.</li>
+          <li><span class="step-bullet">✦</span>Avoid unnecessary stimulation or stressful media.</li>
+          <li><span class="step-bullet">✦</span>Whenever anxious thoughts arise, pause and pray briefly.</li>
+          <li><span class="step-bullet">✦</span>Spend time outdoors if possible.</li>
+          <li><span class="step-bullet">✦</span>Let your Sabbath become a reminder that God is carrying what you cannot control.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-head" onclick="toggleSection(this)">
+        <div class="section-head-left">
+          <div class="section-icon after-icon">🌙</div>
+          <div>
+            <div class="section-title after-title">After</div>
+            <div class="section-subtitle">Receive and reflect</div>
+          </div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="reflect-q">What anxieties were hardest to release?</div>
+        <div class="reflect-q">What moments helped me feel peace?</div>
+        <ul class="steps-list" style="margin-top:14px">
+          <li><span class="step-bullet">✦</span>Ask God for continued trust throughout the week.</li>
+          <li><span class="step-bullet">✦</span>End your Sabbath with a simple prayer of surrender.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="journal-section">
+      <div class="journal-head" style="background: linear-gradient(135deg, var(--lavender) 0%, #6e5c9a 100%)">
+        <span class="journal-head-icon">📖</span>
+        <div class="journal-head-text">
+          <h4>My Reflections — Day 19</h4>
+          <p>Write your thoughts, prayers, and responses</p>
+        </div>
+      </div>
+      <div class="journal-body">
+        <label class="journal-label">Your reflections</label>
+        <textarea class="journal-textarea" id="journal-19" placeholder="What anxieties did I name before God? What did it feel like to place them in His hands?"></textarea>
+        <div class="email-row">
+          <div>
+            <label class="journal-label">Send to (your email)</label>
+            <input type="email" class="email-input" id="email-self-19" placeholder="your@email.com">
+          </div>
+          <div>
+            <label class="journal-label">Also share with (optional)</label>
+            <input type="email" class="email-input" id="email-other-19" placeholder="friend@email.com">
+          </div>
+        </div>
+        <button class="send-btn" style="background:var(--lavender)" onclick="sendReflection(19)">✉ Send Reflections</button>
+        <p class="send-note">Your reflection will open your email app pre-filled and ready to send.</p>
+        <div class="toast" id="toast-19">✅ Email opened! Check your mail app.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DAY 20 ── -->
+  <section id="tab-day20" class="tab-panel">
+    <div class="day-header">
+      <div class="day-number-badge">
+        <div class="day-num" style="background:var(--gold)">20</div>
+        <span class="day-season-tag">Season 4 · Healing The Soul</span>
+      </div>
+    </div>
+
+    <div class="section-card open">
+      <div class="section-head" onclick="toggleSection(this)">
+        <div class="section-head-left">
+          <div class="section-icon before-icon">🌅</div>
+          <div>
+            <div class="section-title before-title">Before</div>
+            <div class="section-subtitle">Prepare your heart</div>
+          </div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <ul class="steps-list">
+          <li><span class="step-bullet">✦</span>Acknowledge areas where you feel emotionally or spiritually depleted.</li>
+          <li><span class="step-bullet">✦</span>Release the pressure to appear strong.</li>
+        </ul>
+        <div class="prayer-block">
+          <div class="prayer-label">🙏 Open with this prayer</div>
+          <div class="prayer-text">"Lord, I cannot carry everything on my own."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-head" onclick="toggleSection(this)">
+        <div class="section-head-left">
+          <div class="section-icon during-icon">☀️</div>
+          <div>
+            <div class="section-title during-title">During</div>
+            <div class="section-subtitle">Practice rhythms of rest</div>
+          </div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="scripture-block">
+          <div class="scripture-ref">Isaiah 46:3–4</div>
+          <div class="scripture-text">Read these verses slowly. Hear God's promise to carry you through every season.</div>
+        </div>
+        <ul class="steps-list">
+          <li><span class="step-bullet">✦</span>Spend time resting rather than striving.</li>
+          <li><span class="step-bullet">✦</span>Receive help, support, or kindness from others if available.</li>
+          <li><span class="step-bullet">✦</span>Choose gentleness toward yourself throughout the day.</li>
+          <li><span class="step-bullet">✦</span>Allow yourself to simply be held by God's presence.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-head" onclick="toggleSection(this)">
+        <div class="section-head-left">
+          <div class="section-icon after-icon">🌙</div>
+          <div>
+            <div class="section-title after-title">After</div>
+            <div class="section-subtitle">Receive and reflect</div>
+          </div>
+        </div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="reflect-q">What burdens am I trying to carry alone?</div>
+        <div class="reflect-q">What would it mean to trust God more deeply?</div>
+        <ul class="steps-list" style="margin-top:14px">
+          <li><span class="step-bullet">✦</span>Thank God for His sustaining grace.</li>
+          <li><span class="step-bullet">✦</span>Close your Sabbath with peace and quiet trust.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="journal-section">
+      <div class="journal-head" style="background: linear-gradient(135deg, #8a6a1a 0%, var(--gold) 100%)">
+        <span class="journal-head-icon">📖</span>
+        <div class="journal-head-text">
+          <h4>My Reflections — Day 20</h4>
+          <p>Write your thoughts, prayers, and responses</p>
+        </div>
+      </div>
+      <div class="journal-body">
+        <label class="journal-label">Your reflections</label>
+        <textarea class="journal-textarea" id="journal-20" placeholder="What is God carrying for me that I've been holding on my own? What does deeper trust look like?"></textarea>
+        <div class="email-row">
+          <div>
+            <label class="journal-label">Send to (your email)</label>
+            <input type="email" class="email-input" id="email-self-20" placeholder="your@email.com">
+          </div>
+          <div>
+            <label class="journal-label">Also share with (optional)</label>
+            <input type="email" class="email-input" id="email-other-20" placeholder="friend@email.com">
+          </div>
+        </div>
+        <button class="send-btn" style="background:#8a6a1a" onclick="sendReflection(20)">✉ Send Reflections</button>
+        <p class="send-note">Your reflection will open your email app pre-filled and ready to send.</p>
+        <div class="toast" id="toast-20">✅ Email opened! Check your mail app.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+  <div class="footer-logo">Resting in God</div>
+  <p>Season 4 of 10 — <em>Healing The Soul</em><br>
+  Real Life Christian Communities &nbsp;·&nbsp; <a href="https://rlcc.ph">rlcc.ph</a><br>
+  <span style="font-size:0.68rem; opacity:0.5; margin-top:6px; display:block;">"He restores my soul." — Psalm 23:3</span></p>
+</footer>
+
+<script>
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+    btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
+
+  function toggleSection(head) {
+    var card = head.parentElement;
+    card.classList.toggle('open');
+  }
+
+  function sendReflection(day) {
+    var text     = (document.getElementById('journal-' + day).value || '').trim();
+    var selfAddr = (document.getElementById('email-self-' + day).value || '').trim();
+    var otherAddr= (document.getElementById('email-other-' + day).value || '').trim();
+
+    if (!selfAddr) {
+      alert('Please enter your email address to send your reflection.');
+      return;
+    }
+
+    var subject = encodeURIComponent('Resting in God — Season 4 | Day ' + day + ' Reflection');
+    var body    = encodeURIComponent(
+      'Day ' + day + ' Reflection — Resting in God: Healing The Soul\n' +
+      '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n' +
+      (text || '(No reflection written yet.)') +
+      '\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n' +
+      '"He restores my soul." — Psalm 23:3\n' +
+      'Real Life Christian Communities · rlcc.ph'
+    );
+
+    var to = selfAddr;
+    if (otherAddr) { to += ',' + otherAddr; }
+
+    window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+
+    var toast = document.getElementById('toast-' + day);
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 4000);
+  }
+</script>
 </body>
 </html>
