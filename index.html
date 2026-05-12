@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resting in God - Season 4</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-color: #365233;
+            --secondary-color: #f4f7f4;
+            --accent-color: #e8ede7;
+        }
+        body {
+            background-color: var(--secondary-color);
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .tab-active {
+            background-color: var(--primary-color) !important;
+            color: white !important;
+            border-bottom: 4px solid #2a4028;
+        }
+        .content-section {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .content-section.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .step-header {
+            color: var(--primary-color);
+            font-weight: bold;
+            border-bottom: 2px solid var(--accent-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .step-header span {
+            background: var(--primary-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl font-bold mb-2" style="color: var(--primary-color);">Resting in God</h1>
+            <p class="text-xl text-gray-600 italic">Season 4: Healing the Soul</p>
+            <div class="mt-4 w-24 h-1 mx-auto" style="background-color: var(--primary-color);"></div>
+        </header>
+
+        <!-- Tab Navigation -->
+        <nav class="flex flex-wrap justify-center gap-2 mb-8" id="tab-nav">
+            <button onclick="showTab('intro')" class="tab-btn px-6 py-2 rounded-t-lg bg-white font-semibold transition-all hover:bg-gray-100" id="btn-intro">Introduction</button>
+            <button onclick="showTab('day16')" class="tab-btn px-6 py-2 rounded-t-lg bg-white font-semibold transition-all hover:bg-gray-100" id="btn-day16">Day 16</button>
+            <button onclick="showTab('day17')" class="tab-btn px-6 py-2 rounded-t-lg bg-white font-semibold transition-all hover:bg-gray-100" id="btn-day17">Day 17</button>
+            <button onclick="showTab('day18')" class="tab-btn px-6 py-2 rounded-t-lg bg-white font-semibold transition-all hover:bg-gray-100" id="btn-day18">Day 18</button>
+            <button onclick="showTab('day19')" class="tab-btn px-6 py-2 rounded-t-lg bg-white font-semibold transition-all hover:bg-gray-100" id="btn-day19">Day 19</button>
+            <button onclick="showTab('day20')" class="tab-btn px-6 py-2 rounded-t-lg bg-white font-semibold transition-all hover:bg-gray-100" id="btn-day20">Day 20</button>
+        </nav>
+
+        <!-- Content Area -->
+        <div id="content-container">
+            
+            <!-- Intro Tab -->
+            <section id="intro" class="content-section active card p-6 md:p-10">
+                <h2 class="text-2xl font-bold mb-4" style="color: var(--primary-color);">How to Use These Guidelines</h2>
+                <div class="space-y-4 text-gray-700 leading-relaxed">
+                    <p>There are times when rest is not only physical but deeply emotional and spiritual. We may continue functioning outwardly while inwardly carrying exhaustion, disappointment, anxiety, grief, or hidden weariness.</p>
+                    <p class="font-medium">This season is an invitation to bring your tired soul honestly before God.</p>
+                    <p>You do not need to hide your weakness, force yourself to feel strong, or pretend everything is fine. God welcomes weary people with compassion and gentleness.</p>
+                    
+                    <div class="bg-stone-50 p-4 rounded-lg border-l-4" style="border-color: var(--primary-color);">
+                        <p class="italic">"He restores my soul." — Psalm 23:3</p>
+                    </div>
+
+                    <h3 class="font-bold text-lg mt-6">As you move through these Sabbath Days:</h3>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Slow down emotionally.</li>
+                        <li>Become honest before God.</li>
+                        <li>Receive grace instead of pressure.</li>
+                        <li>Allow your soul room to breathe.</li>
+                    </ul>
+                    <p class="mt-4 text-sm bg-blue-50 p-3 rounded text-blue-800">Note: Healing often happens quietly and gradually. Do not rush the process.</p>
+                </div>
+            </section>
+
+            <!-- Day 16 -->
+            <section id="day16" class="content-section card p-6 md:p-10">
+                <div class="mb-8">
+                    <h3 class="step-header"><span>1</span>BEFORE</h3>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Begin your Sabbath by acknowledging your tiredness honestly.</li>
+                        <li>Avoid minimizing or ignoring what you feel.</li>
+                        <li><strong>Pray:</strong> "Lord, help me bring my whole self to You today."</li>
+                        <li>Take several slow breaths and release tension in your body.</li>
+                    </ul>
+                </div>
+                <div class="mb-8">
+                    <h3 class="step-header"><span>2</span>DURING</h3>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Read Matthew 11:28-30 slowly.</li>
+                        <li>Write down the things that are draining your soul.</li>
+                        <li>Spend quiet time with God without trying to fix everything immediately.</li>
+                        <li>Rest physically if your body feels exhausted.</li>
+                        <li>Speak gently to yourself throughout the day.</li>
+                    </ul>
+                </div>
+                <div class="mb-8">
+                    <h3 class="step-header"><span>3</span>AFTER</h3>
+                    <p class="font-semibold mb-2">Reflect:</p>
+                    <ul class="list-disc ml-6 space-y-2 mb-4">
+                        <li>What kind of weariness am I carrying?</li>
+                        <li>What helped me feel lighter today?</li>
+                    </ul>
+                    <p>Thank God for welcoming you in your weakness. End your Sabbath with quiet gratitude.</p>
+                </div>
+                <div class="reflection-area mt-10 p-6 bg-gray-50 rounded-xl border border-gray-200">
+                    <h4 class="font-bold mb-2">My Reflections</h4>
+                    <textarea id="ref-day16" class="w-full h-32 p-3 border rounded-lg mb-4" placeholder="How did today feel?"></textarea>
+                    <button onclick="emailReflections(16)" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-900 transition-colors">Email Reflections</button>
+                </div>
+            </section>
+
+            <!-- Day 17 -->
+            <section id="day17" class="content-section card p-6 md:p-10">
+                <div class="mb-8">
+                    <h3 class="step-header"><span>1</span>BEFORE</h3>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Notice any self-criticism or inner pressure you are carrying.</li>
+                        <li><strong>Pray:</strong> "Lord, help me receive Your compassion."</li>
+                        <li>Release unrealistic expectations for the day.</li>
+                    </ul>
+                </div>
+                <div class="mb-8">
+                    <h3 class="step-header"><span>2</span>DURING</h3>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Read Psalm 103 slowly.</li>
+                        <li>Imagine God looking at you with kindness and understanding.</li>
+                        <li>Spend time doing something nurturing and peaceful.</li>
+                        <li>Avoid harsh self-evaluation.</li>
+                        <li>Whenever feelings of failure arise, remind yourself: "God is compassionate and gracious."</li>
+                    </ul>
+                </div>
+                <div class="mb-8">
+                    <h3 class="step-header"><span>3</span>AFTER</h3>
+                    <p class="font-semibold mb-2">Reflect:</p>
+                    <ul class="list-disc ml-6 space-y-2 mb-4">
+                        <li>Was it difficult for me to receive compassion today?</li>
+                        <li>What helped me experience God's kindness?</li>
+                    </ul>
+                    <p>Offer yourself grace for areas where you feel weak. Rest in God's mercy.</p>
+                </div>
+                <div class="reflection-area mt-10 p-6 bg-gray-50 rounded-xl border border-gray-200">
+                    <h4 class="font-bold mb-2">My Reflections</h4>
+                    <textarea id="ref-day17" class="w-full h-32 p-3 border rounded-lg mb-4" placeholder="Reflect on God's compassion..."></textarea>
+                    <button onclick="emailReflections(17)" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-900 transition-colors">Email Reflections</button>
+                </div>
+            </section>
+
+            <!-- Day 18 -->
+            <section id="day18" class="content-section card p-6 md:p-10">
+                <div class="mb-8">
+                    <h3 class="step-header"><span>1</span>BEFORE</h3>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Bring any sadness, disappointment, or grief honestly before God.</li>
+                        <li>Do not pressure yourself to feel cheerful today.</li>
+                        <li><strong>Pray:</strong> "Lord, stay near to me in my sorrow."</li>
+                    </ul>
+                </div>
+                <div class="mb-8">
+                    <h3 class="step-header"><span>2</span>DURING</h3>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Read Psalm 34:18 slowly.</li>
+                        <li>Allow yourself to feel emotions without rushing past them.</li>
+                        <li>Sit quietly with God even if words are difficult.</li>
+                        <li>Spend time in a peaceful place.</li>
+                        <li>Listen to gentle worship music or reflective hymns.</li>
+                        <li>Remember that God is present even in sorrow.</li>
+                    </ul>
+                </div>
+                <div class="mb-8">
+                    <h3 class="step-header"><span>3</span>AFTER</h3>
+                    <p class="font-semibold mb-2">Reflect:</p>
+                    <ul class="list-disc ml-6 space-y-2 mb-4">
+                        <li>What grief or sadness surfaced today?</li>
+                        <li>Did I sense God's presence in my weakness?</li>
+                    </ul>
+                    <p>Thank God for staying near to the brokenhearted. End your Sabbath gently and quietly.</p>
+                </div>
+                <div class="reflection-area mt-10 p-6 bg-gray-50 rounded-xl border border-gray-200">
+                    <h4 class="font-bold mb-2">My Reflections</h4>
+                    <textarea id="ref-day18" class="w-full h-32 p-3 border rounded-lg mb-4" placeholder="Honest thoughts with God..."></textarea>
+                    <button onclick="emailReflections(18)" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-900 transition-colors">Email Reflections</button>
+                </div>
+            </section>
+
+            <!-- Day 19 -->
+            <section id="day19" class="content-section card p-6 md:p-10">
+                <div class="mb-8">
+                    <h3 class="step-header"><span>1</span>BEFORE</h3>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Write down the worries occupying your thoughts.</li>
+                        <li>Pray through them slowly one by one.</li>
+                        <li><strong>Tell God:</strong> "I place these concerns into Your hands."</li>
+                    </ul>
+                </div>
+                <div class="mb-8">
+                    <h3 class="step-header"><span>2</span>DURING</h3>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Read Philippians 4:6-7 slowly.</li>
+                        <li>Practice slow breathing throughout the day.</li>
+                        <li>Avoid unnecessary stimulation or stressful media.</li>
+                        <li>Whenever anxious thoughts arise, pause and pray briefly.</li>
+                        <li>Spend time outdoors if possible.</li>
+                    </ul>
+                </div>
+                <div class="mb-8">
+                    <h3 class="step-header"><span>3</span>AFTER</h3>
+                    <p class="font-semibold mb-2">Reflect:</p>
+                    <ul class="list-disc ml-6 space-y-2 mb-4">
+                        <li>What anxieties were hardest to release?</li>
+                        <li>What moments helped me feel peace?</li>
+                    </ul>
+                    <p>Ask God for continued trust throughout the week. End your Sabbath with a simple prayer of surrender.</p>
+                </div>
+                <div class="reflection-area mt-10 p-6 bg-gray-50 rounded-xl border border-gray-200">
+                    <h4 class="font-bold mb-2">My Reflections</h4>
+                    <textarea id="ref-day19" class="w-full h-32 p-3 border rounded-lg mb-4" placeholder="What are you surrendering today?"></textarea>
+                    <button onclick="emailReflections(19)" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-900 transition-colors">Email Reflections</button>
+                </div>
+            </section>
+
+            <!-- Day 20 -->
+            <section id="day20" class="content-section card p-6 md:p-10">
+                <div class="mb-8">
+                    <h3 class="step-header"><span>1</span>BEFORE</h3>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Acknowledge areas where you feel emotionally or spiritually depleted.</li>
+                        <li><strong>Pray:</strong> "Lord, I cannot carry everything on my own."</li>
+                        <li>Release the pressure to appear strong.</li>
+                    </ul>
+                </div>
+                <div class="mb-8">
+                    <h3 class="step-header"><span>2</span>DURING</h3>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Read Isaiah 46:3-4 slowly.</li>
+                        <li>Spend time resting rather than striving.</li>
+                        <li>Receive help, support, or kindness from others if available.</li>
+                        <li>Choose gentleness toward yourself throughout the day.</li>
+                        <li>Allow yourself to simply be held by God's presence.</li>
+                    </ul>
+                </div>
+                <div class="mb-8">
+                    <h3 class="step-header"><span>3</span>AFTER</h3>
+                    <p class="font-semibold mb-2">Reflect:</p>
+                    <ul class="list-disc ml-6 space-y-2 mb-4">
+                        <li>What burdens am I trying to carry alone?</li>
+                        <li>What would it mean to trust God more deeply?</li>
+                    </ul>
+                    <p>Thank God for His sustaining grace. Close your Sabbath with peace and quiet trust.</p>
+                </div>
+                <div class="reflection-area mt-10 p-6 bg-gray-50 rounded-xl border border-gray-200">
+                    <h4 class="font-bold mb-2">My Reflections</h4>
+                    <textarea id="ref-day20" class="w-full h-32 p-3 border rounded-lg mb-4" placeholder="Reflecting on God's strength..."></textarea>
+                    <button onclick="emailReflections(20)" class="bg-green-800 text-white px-4 py-2 rounded hover:bg-green-900 transition-colors">Email Reflections</button>
+                </div>
+            </section>
+
+        </div>
+
+        <footer class="mt-12 text-center text-gray-500 text-sm pb-10">
+            &copy; 2024 Resting in God Series | Season 4: Healing the Soul
+        </footer>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Deactivate all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('tab-active');
+            });
+
+            // Show current section and activate button
+            document.getElementById(tabId).classList.add('active');
+            document.getElementById('btn-' + tabId).classList.add('tab-active');
+
+            // Scroll to top of content
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function emailReflections(dayNum) {
+            const reflection = document.getElementById('ref-day' + dayNum).value;
+            if (!reflection.trim()) {
+                alert("Please write some reflections before sending.");
+                return;
+            }
+
+            const subject = encodeURIComponent("Resting in God - Day " + dayNum + " Reflections");
+            const body = encodeURIComponent("Here are my reflections for Day " + dayNum + " (Season 4: Healing the Soul):\n\n" + reflection);
+            
+            // This is the standard way to trigger email in a browser
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        }
+
+        // Initialize first tab
+        window.onload = function() {
+            showTab('intro');
+        };
+    </script>
+</body>
+</html>
